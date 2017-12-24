@@ -12,7 +12,7 @@ public class Example {
     private OOPMultipleClassGenerator generator = new OOPMultipleClassGenerator();
 
     @Rule
-    public Timeout timeout = Timeout.millis(1500);
+    public Timeout timeout = new Timeout(1500);
 
     static I3 obj = null;
 
