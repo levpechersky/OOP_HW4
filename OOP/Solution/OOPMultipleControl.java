@@ -29,6 +29,16 @@ public class OOPMultipleControl {
         OOPMethodModifier modifier() default PUBLIC;
     }
 
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface OOPInnerMethodCall {
+        Class<?> caller();
+        Class<?> callee();
+        String methodName();
+        Class<?>[] argTypes();
+
+    }
+
     public OOPMultipleControl(Class<?> interfaceClass, File sourceFile) {
         this.interfaceClass = interfaceClass;
         this.sourceFile = sourceFile;
