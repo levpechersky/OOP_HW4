@@ -8,7 +8,7 @@ import OOP.Solution.OOPMultipleMethod;
 @OOPMultipleInterface
 public interface I20 {
     @OOPMultipleMethod
-    default void foo() throws OOPMultipleException {
+    default void foo(int x) throws OOPMultipleException {
 
     }
 }

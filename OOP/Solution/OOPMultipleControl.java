@@ -6,6 +6,8 @@ import OOP.Provided.OOPInaccessibleMethod.ForbiddenAccess;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 public class OOPMultipleControl {
@@ -113,11 +115,67 @@ public class OOPMultipleControl {
         }
     }
 
+    // TODO: refactor this
     private void checkGraphInherentAmbiguities() throws OOPInherentAmbiguity {
-        // TODO: stub
+        Deque<Class<?>> topoSort = topologicalSort(this.interfaceClass);
+
+        Map<Class<?>, List<InheritedMethod>> inheritedAndDeclaredMethods = topoSort.stream()
+                .collect(Collectors.toMap(Function.identity(), unused -> new LinkedList<>()));
+
+        Iterator i = topoSort.descendingIterator();
+        while (i.hasNext()){
+            Class<?> current = (Class<?>) i.next();
+            // 1. get declared and inherited methods from direct parents
+            List<InheritedMethod> myMethods = inheritedAndDeclaredMethods.get(current);
+            for (Class<?> baseInterface : current.getInterfaces()){
+                myMethods.addAll(inheritedAndDeclaredMethods.get(baseInterface));
+            }
+            // 2. add current class methods, override existing (remove them from my methods)
+            // 2.1 remove inherited methods which I override
+            myMethods.removeIf(aMethod -> {
+                        try {
+                            current.getMethod(aMethod.method.getName(), aMethod.method.getParameterTypes());
+                            return false;
+                        } catch (NoSuchMethodException e) {
+                            return true;
+                        }
+                    }
+            );
+            // 2.2 add all methods overriden by me
+            myMethods.addAll(Arrays.stream(current.getDeclaredMethods())
+                    .map(aMethod -> new InheritedMethod(aMethod, current))
+                    .collect(Collectors.toList()));
+            // 3. check for ambiguities
+            for (InheritedMethod m : myMethods) {
+                final String mname = m.method.getName();
+                final Class<?>[] args = m.method.getParameterTypes();
+                long occurences = myMethods.stream()
+                        .filter(inMethod -> {
+                                    return inMethod.method.getName().equals(mname) &&
+                                            Arrays.equals(inMethod.method.getParameterTypes(), args);
+                                }
+                        ).count();
+                if (occurences>1) {
+                    throw new OOPInherentAmbiguity(this.interfaceClass, m.definingClass, m.method);
+                }
+            }
+        }
     }
 
+    private class InheritedMethod {
+        public Method method;
+        public Class<?> definingClass;
 
+        public InheritedMethod(Method method, Class<?> definingClass){
+            this.method = method;
+            this.definingClass = definingClass;
+        }
+
+        @Override
+        public int hashCode(){
+            return method.getName().hashCode() ^ definingClass.hashCode();
+        }
+    }
 
     /**
      *
@@ -141,6 +199,45 @@ public class OOPMultipleControl {
     @FunctionalInterface
     private interface BFSCallBack {
         void invoke(Class<?> node, Object callbackArgument) throws OOPMultipleException;
+    }
+
+    private static Deque<Class<?>> topologicalSort(Class<?> start) {
+        Map<Class<?>, Integer> graph = getGraphWithNumberOfImplementors(start);
+        Deque<Class<?>> sorted = new ArrayDeque<>();
+        Deque<Class<?>> sources = new ArrayDeque<>();
+
+        sources.add(start);
+
+        while (!sources.isEmpty()){
+            Class<?> current = sources.removeFirst();
+            sorted.addLast(current);
+            for (Class<?> baseInterface : current.getInterfaces()){
+                Integer count = graph.get(baseInterface);
+                graph.put(baseInterface, count - 1);
+                if (graph.get(baseInterface) == 0)
+                    sources.add(baseInterface);
+            }
+        }
+        return sorted;
+    }
+
+    /**
+     *
+     * @return Map (Interface)->(number of interfaces which extend it)
+     */
+    private static Map<Class<?>, Integer> getGraphWithNumberOfImplementors(Class<?> start){
+        Map<Class<?>, Integer> result = new HashMap<>();
+        try {
+            doBFS(start, (aClass, accumulator)->{
+                HashMap<Class<?>, Integer> map = (HashMap<Class<?>, Integer>) accumulator;
+                Integer count = map.getOrDefault(aClass, 0);
+                map.put(aClass, count + 1);
+            }, result);
+        } catch (OOPMultipleException e){
+            e.printStackTrace();
+            assert false;
+        }
+        return result;
     }
 
 }

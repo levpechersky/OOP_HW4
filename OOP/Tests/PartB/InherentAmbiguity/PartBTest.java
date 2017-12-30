@@ -15,9 +15,6 @@ public class PartBTest {
     private OOPMultipleClassGenerator generator = new OOPMultipleClassGenerator();
 
     @Rule
-    public Timeout timeout = new Timeout(1500);
-
-    @Rule
     public final ExpectedException exception = ExpectedException.none();
 
     @Override
