@@ -5,6 +5,7 @@ import OOP.Provided.OOPInaccessibleMethod.ForbiddenAccess;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -267,5 +268,110 @@ public class OOPMultipleControl {
         return result;
     }
 
-}
+    /* ------------- Methods for Part 3 ------------ */
+    /**
+     * Returns a list of all possible matches to the method with name=methodName
+     * and possible-matching argument types.
+     * @param interfaceClass - The interface to start searching from.
+     * @param methodName     - The name of the method to search for.
+     * @param methodArgs     - The arguments given to the invoke method originally.
+     */
+    private static Set<Method> possibleMethodMatches(Class<?> interfaceClass, String methodName, Object[] methodArgs) {
+        Queue<Class<?>> qu_BFS = new ArrayDeque<Class<?>>();
+        Map<Method, Integer> levelMap = new HashMap<>();
+        assert (interfaceClass.getGenericInterfaces().length())
+        qu_BFS.add(interfaceClass.getGenericInterfaces()[0]);
+        Integer bfs_level = 0;
+        while(!qu_BFS.isEmpty()) {
+            bfs_level += 1;
+            Class<?> currVertex = qu_BFS.removeFirst();
+            Class<?>[] singleLevelInterfaces = currVertex.getInterfaces();
+            for(Class<?> currInterface : singleLevelInterfaces) {
+                Method found = matchingMethodExists(currInterface, methodName, args);
+                if(found == null)
+                    continue;
+                // If method is private, it means that it hides any
+                // inherited method with the same name. In that case,
+                // we won't add any inherited method unless they came
+                // in from a different path.
+                if((found.getModifiers() == Modifier.PRIVATE)
+                || (getMethodModifier(found) == OOPMethodModifier.PRIVATE))
+                    continue;
+                if(verifyArgumentTypes(methodArgs, found.getParameterTypes()))
+                    addMethodIfNeeded(levelMap, found, bfs_level);
+                qu_BFS.add(currInterface); //Adding again to the BFS.
+            }
+        }
+        return levelMap.keySet();
+    }
 
+    /** 
+     * Checks if every object in input matches its expected type.
+     * @param interfaceClass - The interface to search for the methodName inside. 
+     * @param methodName     - The name of the method to search for.
+     * @param numArgs        - The number of arguments the method should have.
+     */
+    private static Method matchingMethodExists(Class<?> interfaceClass, String methodName, Integer numArgs) {
+        Method[] interfaceMethods = interfaceClass.getDeclaredMethods();
+        for(Method m : interfaceMethods) {
+            if(m.getName().equals(methodName) 
+                && (m.getParameterTypes().length() == numArgs))
+                return m;
+        }
+        return null;
+    }
+
+    /** 
+     * Checks if every object in input matches its expected type.
+     * @param inputVars - The input parameters to verify.
+     * @param expectedTypes - The types to compare the parameters against.
+     *                        Types that inherit the given one are valid.
+     */
+    private static boolean verifyArgumentTypes(Object[] inputVars, Class<?>[] expectedTypes) {
+        if(inputVars.length() != expectedTypes.length())
+            return false;
+        for(int i = 0; i < inputVars.length(); i++) {
+            if(!(inputVars[i] instanceof expectedTypes[i]))
+                return false;
+        }
+
+        return true;
+    }
+
+    /** 
+     * Checks if we need to add the method to the map of possible matchs,
+     * or replace a current possible match.
+     * @param matchingFound - The map of current possible matchs found.
+     * @param possibleAdd   - The method that might be a match.
+     * @param level         - The level of the method in the BFS traversal.
+     */
+    private static void addMethodIfNeeded(Map<Method, Integer> matchingFound, Method possibleAdd, Integer level) {
+        /*  
+            We want to start doing a bit of replacing possible existing matches
+            in case a better one comes along. Later we will check even more for
+            any ambiguities. Here we don't remove any ambiguities because if we
+            replaced a method, it would have been hidden by the implementation
+            of the replacing method. 
+        */
+        boolean need_add = true;
+        for(Map.Entry<Method, Integer> entry : matchingFound.entrySet()) {
+            Class<?> exist_declareClass = entry.getKey().getDeclaringClass();
+            Class<?> newer_declareClass = possibleMatch.getDeclaringClass();
+            if(newer_declareClass.isAssignableFrom(exist_declareClass)) {
+                matchingFound.remove(entry.getKey());
+                matchingFound.put(possibleMatch, level);
+                need_add = false;
+                break;
+            }
+        }
+        if(need_add == true) {
+            matchingFound.put(possibleMatch, level);
+        }
+    }
+
+    private static OOPMethodModifier getMethodModifier(Method oopMethod) {
+        OOPMethodModifier modifierAnnotation 
+            = oopMethod.getAnnotation(OOPMultipleMethod.class);
+        return modifierAnnotation;
+    }
+}
