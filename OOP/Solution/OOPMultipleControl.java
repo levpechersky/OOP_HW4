@@ -15,10 +15,12 @@ public class OOPMultipleControl {
 
     private Class<?> interfaceClass;
     private File sourceFile;
+    private Integer max_bfsVal;
 
     public OOPMultipleControl(Class<?> interfaceClass, File sourceFile) {
         this.interfaceClass = interfaceClass;
         this.sourceFile = sourceFile;
+        this.max_bfsVal = -1;
     }
 
     public void validateInheritanceGraph() throws OOPMultipleException {
@@ -30,7 +32,9 @@ public class OOPMultipleControl {
     //TODO: fill in here :
     public Object invoke(String methodName, Object[] args)
             throws OOPMultipleException {
-        return null;
+        Method best_match = this.checkCoincidentalAmbiguity(methodName, args);
+        Object output = best_match.invoke(args);
+        return output;
     }
 
     public void removeSourceFile() {
@@ -269,6 +273,68 @@ public class OOPMultipleControl {
     }
 
     /* ------------- Methods for Part 3 ------------ */
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    private Method checkCoincidentalAmbiguity(String invokedName, Object[] invokedArgs) 
+        throws OOPInaccessibleMethod, OOPCoincidentalAmbiguity {
+        Set<Method> possibleMatches 
+            = possibleMethodMatches(this.interfaceClass, invokedName, invokedArgs);
+        Integer minimalDist = getMinimalParamDist(possibleMatches, invokedArgs);
+        Map<Method, Integer> matchsWithDist = getMethodDistMap(invokedArgs, possibleMatches);
+        Map<Method> minimalDistMethods = matchsWithDist.stream()
+            .filter(aPair -> (aPair.getValue() <= minimalDist))
+            .collect(Collectors.toMap());
+        if(minimalDistMethods.size() == 1)
+            return minimalDistMethods.keySet()[0];
+        if(minimalDistMethods.size() == 0)
+            return null;
+        // Else, we need to check if there is ambiguity.
+        for(Map.Entry<Method, Integer> m1 : minimalDistMethods.entrySet()) {
+            for(Map.Entry<Method, Integer> m2 : minimalDistMethods.entrySet()) {
+                if(m1.getKey().equals(m2.getKey())) //Method always equal to itself.
+                    continue;
+                if(m1.getKey().getParameterTypes().equals(m2.getKey().getParameterTypes()))
+                    throw OOPCoincidentalAmbiguity();
+            }
+        }
+        //If no ambiguity, we find the best method (closest in bfs) and invoke it.
+        Method best_match = null
+        Integer minimal_bfsVal = this.max_bfsVal + 10; //Set an upper bound.
+        this.max_bfsVal = -1; //Reset the maxVal for next "invoke"
+        for(Map.Entry<Method, Integer> m : minimalDistMethods.entrySet()) {
+            if(m.getValue() < minimal_bfsVal) {
+                minimal_bfsVal = m.getValue();
+                best_match = m.getKey();
+            }
+        }
+        assert (best_match != null);
+        return best_match;
+    }
+
+    private Integer getMinimalParamDist(Set<Method> possibleMatches, Object[] argArray) {
+        //The maximal distance is no arguments matching exactly, so this
+        //should be a valid upper bound for how many match exactly.
+        Integer minimalDist = argArray.length() + 1;
+        Class<?>[] match_types = null;
+        Integer currentDist = null;
+        for(Method match : possibleMatches) {
+            match_types = match.getParameterTypes();
+            currentDist = getParametersDistance(argArray, match_types);
+            if(currentDist < minimalDist)
+                minimalDist = currentDist;
+        }
+        return minimalDist;
+    }
+
+    private Map<Method, Integer> getMethodDistMap(Object[] argArray, Set<Method> possibleMatches) {
+        Map<Method, Integer> resultsMap = new HashMap<>();
+        for(Method m : possibleMatches) {
+            Class<?>[] method_types = m.getParameterTypes();
+            resultsMap.put(m, getParametersDistance(argArray, method_types));
+        }
+        return resultsMap;
+    }
+
     /**
      * Returns a list of all possible matches to the method with name=methodName
      * and possible-matching argument types.
@@ -290,19 +356,19 @@ public class OOPMultipleControl {
                 Method found = matchingMethodExists(currInterface, methodName, args);
                 if(found == null)
                     continue;
-                // If method is private, it means that it hides any
-                // inherited method with the same name. In that case,
-                // we won't add any inherited method unless they came
-                // in from a different path.
                 if((found.getModifiers() == Modifier.PRIVATE)
-                || (getMethodModifier(found) == OOPMethodModifier.PRIVATE))
-                    continue;
+                || (getMethodModifier(found) == OOPMethodModifier.PRIVATE)) {
+                    addMethodIfNeeded(levelMap, found, bfs_level);
+                    continue; //If private, means it hides methods above it,
+                    //even if their parameters are different.
+                }
                 if(verifyArgumentTypes(methodArgs, found.getParameterTypes()))
                     addMethodIfNeeded(levelMap, found, bfs_level);
                 qu_BFS.add(currInterface); //Adding again to the BFS.
             }
         }
         return levelMap.keySet();
+        this.max_bfsVal = bfs_level;
     }
 
     /** 
@@ -369,9 +435,36 @@ public class OOPMultipleControl {
         }
     }
 
+    /** 
+     * Returns the MethodModifier of the method specified
+     * @param oopMethod - The method to get the modifier from.
+     * @return Returns the OOPMethodModifier of the method.
+     */
     private static OOPMethodModifier getMethodModifier(Method oopMethod) {
         OOPMethodModifier modifierAnnotation 
             = oopMethod.getAnnotation(OOPMultipleMethod.class);
-        return modifierAnnotation;
+        return modifierAnnotation.modifier();
+    }
+
+    /** 
+     * Gets the distance in parameters between the array of arguments,
+     * and the specified array of types.
+     * @param argArray - The array of arguments we hope to give a
+     *                   method to invoke.
+     * @param possibleTypes - The types to compare with the types of
+     *                        the objects in argArray.
+     * @return Returns the number of mismatched objects, or null if
+     *         the sizes of the arrays are not equals.
+     */
+    private static Integer getParametersDistance(Object[] argArray, Class<?>[] possibleTypes) {
+        if(verifyArgumentTypes(argArray, possibleTypes) == false)
+            return null;
+        Integer mismatchCount = 0;
+        for(int i = 0; i < argArray.length(); i++) {
+            if(argArray[i].getClass().equals(possibleTypes[i]))
+                continue;
+            mismatchCount += 1;
+        }
+        return mismatchCount;
     }
 }
