@@ -31,9 +31,15 @@ public class OOPMultipleControl {
 
     public Object invoke(String methodName, Object[] args)
             throws OOPMultipleException {
-        Method best_match = this.checkCoincidentalAmbiguity(methodName, args);
-        Object output = best_match.invoke(args);
-        return output;
+        Method best_match_proto = this.checkCoincidentalAmbiguity(methodName, args);
+        //We have the method from its interface, we need to get the actual method
+        //from the class InterfaceImpl
+        String method_inter = best_match_proto.getDeclaringClass().getName();
+        String actual_class = method_inter + "Impl";
+        Class<?> actual = Class.forName(actual_class);
+        best_match = 
+            actual.getMethod(best_match_proto.getName(), best_match_proto.getParameterTypes());
+        best_match.invoke(args);
     }
 
     public void removeSourceFile() {
@@ -305,7 +311,11 @@ public class OOPMultipleControl {
                 if(m1.getKey().equals(m2.getKey())) //Method always equal to itself.
                     continue;
                 if(m1.getKey().getParameterTypes().equals(m2.getKey().getParameterTypes()))
-                    throw OOPCoincidentalAmbiguity();
+                    Map<Method, Integer> ambiguities = minimalDistMethods.stream()
+                        .filter(aPair -> aPair.getParameterTypes().equals(m1.getParameterTypes()))
+                        .map(aPair -> new Pair(aPair.getKey(), aPair.getValue()))
+                        .collect(Collectors.toList());
+                    throw OOPCoincidentalAmbiguity(ambiguities);
             }
         }
         //If no ambiguity, we find the best method (closest in bfs) and invoke it.
