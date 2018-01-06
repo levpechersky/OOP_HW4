@@ -29,7 +29,6 @@ public class OOPMultipleControl {
         checkGraphInherentAmbiguities();
     }
 
-    //TODO: fill in here :
     public Object invoke(String methodName, Object[] args)
             throws OOPMultipleException {
         Method best_match = this.checkCoincidentalAmbiguity(methodName, args);
@@ -47,12 +46,12 @@ public class OOPMultipleControl {
         try {
             // Root of inheritance graph doesn't need to be annotated, so we don't check it.
             doBFS(this.interfaceClass, (aClass, unused) -> {
-                    if (aClass != this.interfaceClass)
-                        checkAnnotationsOfInterface(aClass);
-                }, null);
+                if (aClass != this.interfaceClass)
+                    checkAnnotationsOfInterface(aClass);
+            }, null);
         } catch (OOPBadClass e) {
             throw e;
-        } catch (OOPMultipleException e){
+        } catch (OOPMultipleException e) {
             // We don't expect exceptions other than OOPBadClass
             e.printStackTrace();
             assert false;
@@ -67,7 +66,7 @@ public class OOPMultipleControl {
             throw new OOPBadClass(interfaceToCheck);
 
         // 2. each method of interfaceToCheck has OOPMultipleMethod annotation
-        for (Method method : interfaceToCheck.getDeclaredMethods()){
+        for (Method method : interfaceToCheck.getDeclaredMethods()) {
             if (!method.isAnnotationPresent(OOPMultipleMethod.class))
                 throw new OOPBadClass(method);
         }
@@ -78,15 +77,15 @@ public class OOPMultipleControl {
         try {
 
             doBFS(this.interfaceClass, (aClass, accumulator) -> {
-                    checkInnerCallsOfInterface(aClass, (Collection<ForbiddenAccess>) accumulator);
-                }, badInnerMethods);
+                checkInnerCallsOfInterface(aClass, (Collection<ForbiddenAccess>) accumulator);
+            }, badInnerMethods);
 
             if (!badInnerMethods.isEmpty())
                 throw new OOPInaccessibleMethod(badInnerMethods);
 
-        } catch (OOPInaccessibleMethod e){
+        } catch (OOPInaccessibleMethod e) {
             throw e;
-        }catch (OOPMultipleException e){
+        } catch (OOPMultipleException e) {
             // We don't expect exceptions other than OOPInaccessibleMethod
             e.printStackTrace();
             assert false;
@@ -125,6 +124,7 @@ public class OOPMultipleControl {
      * We traverse inheritance graph from most basic interfaces to most derived (reverse topological order), and
      * for each class we keep track of methods it knows and which interface first declared that method (look
      * InheritedMethod class).
+     *
      * @throws OOPInherentAmbiguity
      */
     private void checkGraphInherentAmbiguities() throws OOPInherentAmbiguity {
@@ -140,7 +140,7 @@ public class OOPMultipleControl {
                 .collect(Collectors.toMap(Function.identity(), unused -> new LinkedList<>()));
 
         Iterator i = topoSort.descendingIterator();
-        while (i.hasNext()){
+        while (i.hasNext()) {
             Class<?> currentInterface = (Class<?>) i.next();
             List<InheritedMethod> myMethods = getMethodsFromBaseInterfaces(currentInterface, inheritedAndDeclaredMethods);
             applyMethodsOverride(currentInterface, myMethods);
@@ -159,13 +159,13 @@ public class OOPMultipleControl {
     private void applyMethodsOverride(Class<?> currentInterface, List<InheritedMethod> inheritedMethods) {
         // 1. remove inherited methods which currentInterface overrides
         inheritedMethods.removeIf(aMethod -> {
-                    try {
-                        currentInterface.getMethod(aMethod.method.getName(), aMethod.method.getParameterTypes());
-                        return false;
-                    } catch (NoSuchMethodException e) {
-                        return true;
-                    }
-                });
+            try {
+                currentInterface.getDeclaredMethod(aMethod.method.getName(), aMethod.method.getParameterTypes());
+                return true;
+            } catch (NoSuchMethodException e) {
+                return false;
+            }
+        });
         // 2. add all methods overriden by me
         inheritedMethods.addAll(Arrays.stream(currentInterface.getDeclaredMethods())
                 .map(aMethod -> new InheritedMethod(aMethod, currentInterface))
@@ -175,7 +175,8 @@ public class OOPMultipleControl {
     /**
      * We simply look for duplicates in list of all methods an interface knows.
      * Note: java's Method.equals() can't do this, since methods declared in different classes aren't equal.
-     *  Instead we compare only declarations.
+     * Instead we compare only signatures.
+     *
      * @param inheritedAndDeclaredMethods - all methods which an interface knows, after applying override.
      * @throws OOPInherentAmbiguity
      */
@@ -200,7 +201,7 @@ public class OOPMultipleControl {
         public Method method;
         public Class<?> declaringClass;
 
-        public InheritedMethod(Method method, Class<?> declaringClass){
+        public InheritedMethod(Method method, Class<?> declaringClass) {
             this.method = method;
             this.declaringClass = declaringClass;
         }
@@ -208,7 +209,8 @@ public class OOPMultipleControl {
 
     /**
      * BFS traversal of inheritance graph.
-     * @param start - start node.
+     *
+     * @param start            - start node.
      * @param callbackFunction - function to invoke for each node (look BFSCallBack).
      * @param callbackArgument - additional argument to pass to callbackFunction.
      *                         Type is Object for the sake of genericity.
@@ -218,12 +220,19 @@ public class OOPMultipleControl {
     private static void doBFS(Class<?> start, BFSCallBack callbackFunction, Object callbackArgument)
             throws OOPMultipleException {
         Queue<Class<?>> queue = new ArrayDeque<>();
+        Set<Class<?>> visited = new HashSet<>();
         queue.add(start);
+        visited.add(start);
 
         while (!queue.isEmpty()) {
             Class<?> classNode = queue.remove();
             callbackFunction.invoke(classNode, callbackArgument);
-            queue.addAll(Arrays.asList(classNode.getInterfaces()));
+            for (Class<?> baseInterface : classNode.getInterfaces()) {
+                if (!visited.contains(baseInterface)) {
+                    visited.add(baseInterface);
+                    queue.add(baseInterface);
+                }
+            }
         }
     }
 
@@ -254,16 +263,18 @@ public class OOPMultipleControl {
     }
 
     /**
-     *
      * @return Map (Interface)->(number of interfaces which extend it)
      */
     private static Map<Class<?>, Integer> countInterfaceImplementors(Class<?> start) {
         Map<Class<?>, Integer> result = new HashMap<>();
+        result.put(start, 0);
         try {
             doBFS(start, (aClass, accumulator) -> {
-                HashMap<Class<?>, Integer> map = (HashMap<Class<?>, Integer>) accumulator;
-                Integer count = map.getOrDefault(aClass, 0);
-                map.put(aClass, count + 1);
+                HashMap<Class<?>, Integer> implementorsCount = (HashMap<Class<?>, Integer>) accumulator;
+                for (Class<?> baseInterface : aClass.getInterfaces()) {
+                    Integer count = implementorsCount.getOrDefault(baseInterface, 0);
+                    implementorsCount.put(baseInterface, count + 1);
+                }
             }, result);
         } catch (OOPMultipleException e) {
             e.printStackTrace();
@@ -275,15 +286,15 @@ public class OOPMultipleControl {
     /* ------------- Methods for Part 3 ------------ */
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-    private Method checkCoincidentalAmbiguity(String invokedName, Object[] invokedArgs) 
-        throws OOPInaccessibleMethod, OOPCoincidentalAmbiguity {
-        Set<Method> possibleMatches 
-            = possibleMethodMatches(this.interfaceClass, invokedName, invokedArgs);
+    private Method checkCoincidentalAmbiguity(String invokedName, Object[] invokedArgs)
+            throws OOPInaccessibleMethod, OOPCoincidentalAmbiguity {
+        Set<Method> possibleMatches
+                = possibleMethodMatches(this.interfaceClass, invokedName, invokedArgs);
         Integer minimalDist = getMinimalParamDist(possibleMatches, invokedArgs);
         Map<Method, Integer> matchsWithDist = getMethodDistMap(invokedArgs, possibleMatches);
         Map<Method> minimalDistMethods = matchsWithDist.stream()
-            .filter(aPair -> (aPair.getValue() <= minimalDist))
-            .collect(Collectors.toMap());
+                .filter(aPair -> (aPair.getValue() <= minimalDist))
+                .collect(Collectors.toMap());
         if(minimalDistMethods.size() == 1)
             return minimalDistMethods.keySet()[0];
         if(minimalDistMethods.size() == 0)
@@ -357,7 +368,7 @@ public class OOPMultipleControl {
                 if(found == null)
                     continue;
                 if((found.getModifiers() == Modifier.PRIVATE)
-                || (getMethodModifier(found) == OOPMethodModifier.PRIVATE)) {
+                        || (getMethodModifier(found) == OOPMethodModifier.PRIVATE)) {
                     addMethodIfNeeded(levelMap, found, bfs_level);
                     continue; //If private, means it hides methods above it,
                     //even if their parameters are different.
@@ -371,23 +382,23 @@ public class OOPMultipleControl {
         this.max_bfsVal = bfs_level;
     }
 
-    /** 
+    /**
      * Checks if every object in input matches its expected type.
-     * @param interfaceClass - The interface to search for the methodName inside. 
+     * @param interfaceClass - The interface to search for the methodName inside.
      * @param methodName     - The name of the method to search for.
      * @param numArgs        - The number of arguments the method should have.
      */
     private static Method matchingMethodExists(Class<?> interfaceClass, String methodName, Integer numArgs) {
         Method[] interfaceMethods = interfaceClass.getDeclaredMethods();
         for(Method m : interfaceMethods) {
-            if(m.getName().equals(methodName) 
-                && (m.getParameterTypes().length() == numArgs))
+            if(m.getName().equals(methodName)
+                    && (m.getParameterTypes().length() == numArgs))
                 return m;
         }
         return null;
     }
 
-    /** 
+    /**
      * Checks if every object in input matches its expected type.
      * @param inputVars - The input parameters to verify.
      * @param expectedTypes - The types to compare the parameters against.
@@ -398,13 +409,13 @@ public class OOPMultipleControl {
             return false;
         for(int i = 0; i < inputVars.length(); i++) {
             if(!(inputVars[i] instanceof expectedTypes[i]))
-                return false;
+            return false;
         }
 
         return true;
     }
 
-    /** 
+    /**
      * Checks if we need to add the method to the map of possible matchs,
      * or replace a current possible match.
      * @param matchingFound - The map of current possible matchs found.
@@ -412,12 +423,12 @@ public class OOPMultipleControl {
      * @param level         - The level of the method in the BFS traversal.
      */
     private static void addMethodIfNeeded(Map<Method, Integer> matchingFound, Method possibleAdd, Integer level) {
-        /*  
+        /*
             We want to start doing a bit of replacing possible existing matches
             in case a better one comes along. Later we will check even more for
             any ambiguities. Here we don't remove any ambiguities because if we
             replaced a method, it would have been hidden by the implementation
-            of the replacing method. 
+            of the replacing method.
         */
         boolean need_add = true;
         for(Map.Entry<Method, Integer> entry : matchingFound.entrySet()) {
@@ -435,18 +446,18 @@ public class OOPMultipleControl {
         }
     }
 
-    /** 
+    /**
      * Returns the MethodModifier of the method specified
      * @param oopMethod - The method to get the modifier from.
      * @return Returns the OOPMethodModifier of the method.
      */
     private static OOPMethodModifier getMethodModifier(Method oopMethod) {
-        OOPMethodModifier modifierAnnotation 
-            = oopMethod.getAnnotation(OOPMultipleMethod.class);
+        OOPMethodModifier modifierAnnotation
+                = oopMethod.getAnnotation(OOPMultipleMethod.class);
         return modifierAnnotation.modifier();
     }
 
-    /** 
+    /**
      * Gets the distance in parameters between the array of arguments,
      * and the specified array of types.
      * @param argArray - The array of arguments we hope to give a
