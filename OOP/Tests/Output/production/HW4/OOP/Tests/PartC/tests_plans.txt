@@ -1,0 +1,36 @@
+Test 4: OOPTestInvokeWithAmbig
+A1    A2
+|     |
+B1    B2
+   \/
+   CC
+A1 : foo1(Integer)
+A2 : foo1(Double)
+CC.foo1(5)   -> A1.foo1
+CC.foo1(0.4) -> A2.foo1
+
+Test 5: OOPTestFailWithAmbig
+Same as 4, but A1::foo1 and A2::foo2 accept Integer (causes ambiguity)
+
+Test 6: OOPTestPrivateHidesAmbig
+Same as 5, but:
+B1 : private foo1(Integer) (no ambiguity)
+
+Test 7: OOPTestInvokeHigherAmbig
+Same as 6, but:
+B1 : foo1(String) (no ambiguity)
+
+Test 8: OOPTestDiamondAmbig
+class A {foo}
+class B1:A, class B2:A
+class C : B1, B2
+
+Test 9: OOPTestAdvancedDiamond
+Advanced diamond, no ambiguity.
+Duplicate Test 8 three times, D inherits from all 3 diamonds.
+
+Test 10:OOPTestDiamondAmbiguity
+Advanced diamond, single ambiguity.
+
+Test 11:OOPTestAdvancedDiamondAmbig
+Advanced diamond, multiple ambiguity.

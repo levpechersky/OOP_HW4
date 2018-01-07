@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPAnnotaionsTest.java" />
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPTestFailWithAmbig.java" />
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPTestInvokeHigherAmbig.java" />
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPTestInvokeMultiple.java" />
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPTestInvokeWithAmbig.java" />
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPTestMult2Level.java" />
+      <file url="file://$PROJECT_DIR$/OOP/Tests/PartC/OOPTestPrivateHidesAmbig.java" />
+    </excludeFromCompile>
+  </component>
+</project>
