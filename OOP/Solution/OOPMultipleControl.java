@@ -5,6 +5,7 @@ import OOP.Provided.OOPInaccessibleMethod.ForbiddenAccess;
 import javafx.util.Pair;
 import java.io.File;
 import java.lang.Class;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.*;
@@ -34,11 +35,28 @@ public class OOPMultipleControl {
         //We have the method from its interface, we need to get the actual method
         //from the class InterfaceImpl
         String method_inter = best_match_proto.getDeclaringClass().getName();
-        String actual_class = method_inter + "Impl";
-        Class<?> actual = Class.forName(actual_class);
-        Method best_match =
-            actual.getDeclaredMethod(best_match_proto.getName(), best_match_proto.getParameterTypes());
-        best_match.invoke(args);
+        String actual_class_str = method_inter + "Impl";
+        Class actual; Method best_match;
+        try {
+            actual = Class.forName(actual_class_str);
+        } catch (ClassNotFoundException e) {
+            return null;
+        }
+        try {
+            best_match =
+                    actual.getDeclaredMethod(best_match_proto.getName(), best_match_proto.getParameterTypes());
+        } catch (NoSuchMethodException e) {
+            return null;
+        }
+        Object output;
+        try {
+            output = best_match.invoke(args);
+            return output;
+        } catch (IllegalAccessException e) {
+            throw new OOPBadClass(best_match);
+        } catch (InvocationTargetException e) {
+            throw new OOPBadClass(best_match);
+        }
     }
 
     public void removeSourceFile() {
@@ -313,7 +331,7 @@ public class OOPMultipleControl {
                     List<Pair<Class<?>, Method>> ambiguities = minimalDistMethods.entrySet().stream()
                             .collect(Collectors.toMap(aPair -> aPair.getKey().getDeclaringClass(), aPair -> aPair.getKey()))
                             .entrySet().stream()
-                            .map(anEntry -> new Pair(anEntry.getKey(), anEntry.getValue()))
+                            .map(anEntry -> new Pair<Class<?>, Method>(anEntry.getKey(), anEntry.getValue()))
                             .collect(Collectors.toList());
                     throw new OOPCoincidentalAmbiguity(ambiguities);
                 }
@@ -321,7 +339,7 @@ public class OOPMultipleControl {
         }
 
         //If no ambiguity, we find the best method (closest in bfs) and invoke it.
-        Method best_match;
+        Method best_match = null;
         Integer minimal_bfsVal = Integer.MAX_VALUE; //Set an upper bound.
         for(Map.Entry<Method, Integer> m : minimalDistMethods.entrySet()) {
             if(m.getValue() < minimal_bfsVal) {
