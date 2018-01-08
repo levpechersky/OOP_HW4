@@ -152,8 +152,7 @@ public class OOPMultipleControl {
     /**
      * General idea: we want to simulate the way methods are inherited and overridden in C++.
      * We traverse inheritance graph from most basic interfaces to most derived (reverse topological order), and
-     * for each class we keep track of methods it knows and which interface first declared that method (look
-     * InheritedMethod class).
+     * for each class we keep track of methods it knows.
      *
      * @throws OOPInherentAmbiguity
      */
@@ -166,17 +165,16 @@ public class OOPMultipleControl {
         Deque<Class<?>> topoSort = topologicalSort(this.interfaceClass);
 
         /* For each interface in inheritance graph we keep list of methods it knows (either inherited or declared).
-        *
         *  Note: values in this map are valid only for classes we already processed
         *  (i.e. from current to the end of topological sort)
         */
-        Map<Class<?>, List<InheritedMethod>> inheritedAndDeclaredMethods = topoSort.stream()
+        Map<Class<?>, List<Method>> inheritedAndDeclaredMethods = topoSort.stream()
                 .collect(Collectors.toMap(Function.identity(), unused -> new LinkedList<>()));
 
         Iterator i = topoSort.descendingIterator();
         while (i.hasNext()) {
             Class<?> currentInterface = (Class<?>) i.next();
-            List<InheritedMethod> myMethods = getMethodsFromBaseInterfaces(currentInterface, inheritedAndDeclaredMethods);
+            List<Method> myMethods = getMethodsFromBaseInterfaces(currentInterface, inheritedAndDeclaredMethods);
             applyMethodsOverride(currentInterface, myMethods);
             checkForAmbiguities(myMethods);
         }
@@ -189,19 +187,19 @@ public class OOPMultipleControl {
                 .anyMatch(usagesCount -> usagesCount > 1);
     }
 
-    private static List<InheritedMethod> getMethodsFromBaseInterfaces(Class<?> current, Map<Class<?>, List<InheritedMethod>> inheritedAndDeclaredMethods) {
-        List<InheritedMethod> myMethods = inheritedAndDeclaredMethods.get(current);
+    private static List<Method> getMethodsFromBaseInterfaces(Class<?> current, Map<Class<?>, List<Method>> inheritedAndDeclaredMethods) {
+        List<Method> myMethods = inheritedAndDeclaredMethods.get(current);
         for (Class<?> baseInterface : current.getInterfaces()) {
             myMethods.addAll(inheritedAndDeclaredMethods.get(baseInterface));
         }
         return myMethods;
     }
 
-    private void applyMethodsOverride(Class<?> currentInterface, List<InheritedMethod> inheritedMethods) {
+    private void applyMethodsOverride(Class<?> currentInterface, List<Method> inheritedMethods) {
         // 1. remove inherited methods which currentInterface overrides
         inheritedMethods.removeIf(aMethod -> {
             try {
-                currentInterface.getDeclaredMethod(aMethod.method.getName(), aMethod.method.getParameterTypes());
+                currentInterface.getDeclaredMethod(aMethod.getName(), aMethod.getParameterTypes());
                 return true;
             } catch (NoSuchMethodException e) {
                 return false;
@@ -209,7 +207,6 @@ public class OOPMultipleControl {
         });
         // 2. add all methods overriden by me
         inheritedMethods.addAll(Arrays.stream(currentInterface.getDeclaredMethods())
-                .map(aMethod -> new InheritedMethod(aMethod, currentInterface))
                 .collect(Collectors.toList()));
     }
 
@@ -221,30 +218,16 @@ public class OOPMultipleControl {
      * @param inheritedAndDeclaredMethods - all methods which an interface knows, after applying override.
      * @throws OOPInherentAmbiguity
      */
-    private void checkForAmbiguities(List<InheritedMethod> inheritedAndDeclaredMethods) throws OOPInherentAmbiguity {
-        for (InheritedMethod m : inheritedAndDeclaredMethods) {
-            final String mname = m.method.getName();
-            final Class<?>[] args = m.method.getParameterTypes();
+    private void checkForAmbiguities(List<Method> inheritedAndDeclaredMethods) throws OOPInherentAmbiguity {
+        for (Method m : inheritedAndDeclaredMethods) {
+            final String name = m.getName();
+            final Class<?>[] args = m.getParameterTypes();
             long occurrences = inheritedAndDeclaredMethods.stream().filter(inMethod ->
-                    inMethod.method.getName().equals(mname) && Arrays.equals(inMethod.method.getParameterTypes(), args))
+                    inMethod.getName().equals(name) && Arrays.equals(inMethod.getParameterTypes(), args))
                     .count();
             if (occurrences > 1) {
-                throw new OOPInherentAmbiguity(this.interfaceClass, m.declaringClass, m.method);
+                throw new OOPInherentAmbiguity(this.interfaceClass, m.getDeclaringClass(), m);
             }
-        }
-    }
-
-    /**
-     * Helper class for inherent ambiguities check.
-     * That's how we keep track which interface declares each method.
-     */
-    private class InheritedMethod {
-        public Method method;
-        public Class<?> declaringClass;
-
-        public InheritedMethod(Method method, Class<?> declaringClass) {
-            this.method = method;
-            this.declaringClass = declaringClass;
         }
     }
 
