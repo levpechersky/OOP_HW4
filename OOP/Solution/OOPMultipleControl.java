@@ -150,7 +150,7 @@ public class OOPMultipleControl {
     }
 
     /**
-     * General idea: we want to simulate the way methods are inherited and overriden in C++.
+     * General idea: we want to simulate the way methods are inherited and overridden in C++.
      * We traverse inheritance graph from most basic interfaces to most derived (reverse topological order), and
      * for each class we keep track of methods it knows and which interface first declared that method (look
      * InheritedMethod class).
@@ -158,6 +158,10 @@ public class OOPMultipleControl {
      * @throws OOPInherentAmbiguity
      */
     private void checkGraphInherentAmbiguities() throws OOPInherentAmbiguity {
+        /* If there is no common base class with declared methods - only coincidental ambiguities can exist.
+        *  In this case we can skip the following check. */
+        if (!existsCommonBaseWithDeclaredMethods())
+            return;
 
         Deque<Class<?>> topoSort = topologicalSort(this.interfaceClass);
 
@@ -176,6 +180,13 @@ public class OOPMultipleControl {
             applyMethodsOverride(currentInterface, myMethods);
             checkForAmbiguities(myMethods);
         }
+    }
+
+    private boolean existsCommonBaseWithDeclaredMethods() {
+        Map<Class<?>, Integer> result = countInterfaceImplementors(this.interfaceClass);
+        return result.values()
+                .stream()
+                .anyMatch(usagesCount -> usagesCount > 1);
     }
 
     private static List<InheritedMethod> getMethodsFromBaseInterfaces(Class<?> current, Map<Class<?>, List<InheritedMethod>> inheritedAndDeclaredMethods) {
