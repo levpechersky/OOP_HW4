@@ -181,10 +181,12 @@ public class OOPMultipleControl {
     }
 
     private boolean existsCommonBaseWithDeclaredMethods() {
-        Map<Class<?>, Integer> result = countInterfaceImplementors(this.interfaceClass);
-        return result.values()
-                .stream()
-                .anyMatch(usagesCount -> usagesCount > 1);
+        Set<Class<?>> commonBases = new HashSet<>();
+        countInterfaceImplementors(this.interfaceClass).forEach((baseInterface, usagesCount) -> {
+            if(usagesCount > 1)
+                commonBases.add(baseInterface);
+        });
+        return commonBases.stream().anyMatch(baseInterface -> baseInterface.getDeclaredMethods().length > 0);
     }
 
     private static List<Method> getMethodsFromBaseInterfaces(Class<?> current, Map<Class<?>, List<Method>> inheritedAndDeclaredMethods) {
