@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16ccd53d-5a85-4675-9242-6fd188eeb846" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Solution/OOPMultiple.class" afterPath="$PROJECT_DIR$/OOP/Solution/OOPMultiple.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/Example/Example.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/Example/Example.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Example/Example.java" afterPath="$PROJECT_DIR$/OOP/Tests/Example/Example.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/.idea/workspace.xml" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +15,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf>
+      <file leaf-file-name="Example.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -45,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OOP/Tests/PartC/OOPTestInvokeRegular.java" />
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/C.java" />
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/IA.java" />
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/AImpl.java" />
@@ -96,6 +109,7 @@
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Almost/I22.java" />
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Almost/C22.java" />
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Almost/OOPTestMult2Almost.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/Example/Example.java" />
       </list>
     </option>
   </component>
@@ -123,10 +137,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -158,12 +168,16 @@
               <item name="OOP" type="462c0819:PsiDirectoryNode" />
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
               <item name="PartC" type="462c0819:PsiDirectoryNode" />
-              <item name="TestMult2Almost" type="462c0819:PsiDirectoryNode" />
+              <item name="TestInvokeMultipleSucc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,20 +204,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OOPTestMult2Almost.mult2LevelAlmostMatch">
-    <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Example.exampleTest">
+    <configuration name="Example.exampleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.*" />
+          <option name="PATTERN" value="OOP.Tests.Example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="HW4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced" />
-      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.OOPTestInvokeRegularAdvanced" />
-      <option name="METHOD_NAME" value="advancedRegularTest" />
+      <option name="PACKAGE_NAME" value="OOP.Tests.Example" />
+      <option name="MAIN_CLASS_NAME" value="OOP.Tests.Example.Example" />
+      <option name="METHOD_NAME" value="exampleTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -216,7 +230,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="OOPTestInvokeRegular.advancedRegularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.*" />
@@ -227,7 +241,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced" />
-      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.OOPTestInvokeRegular" />
+      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.OOPTestInvokeRegularAdvanced" />
       <option name="METHOD_NAME" value="advancedRegularTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -398,19 +412,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.advancedRegularTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegularAdvanced.advancedRegularTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestInvokeMultipleSucc.invokeMultiplePass" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Level.inherit2LevelTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Almost.mult2LevelAlmostMatch" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegularAdvanced.advancedRegularTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestInvokeMultipleSucc.invokeMultiplePass" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Level.inherit2LevelTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Almost.mult2LevelAlmostMatch" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.Example.exampleTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Almost.mult2LevelAlmostMatch" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Level.inherit2LevelTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestInvokeMultipleSucc.invokeMultiplePass" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegularAdvanced.advancedRegularTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.advancedRegularTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Example.exampleTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Almost.mult2LevelAlmostMatch" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Level.inherit2LevelTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestInvokeMultipleSucc.invokeMultiplePass" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegularAdvanced.advancedRegularTest" />
       </list>
     </recent_temporary>
   </component>
@@ -428,17 +442,17 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 39m 23s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
+    <history-entry file="Example_exampleTest - 2018.01.08 at 20h 30m 42s.xml">
+      <configuration name="Example.exampleTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 41m 15s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
+    <history-entry file="Example_exampleTest - 2018.01.08 at 20h 31m 29s.xml">
+      <configuration name="Example.exampleTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 42m 08s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
+    <history-entry file="Example_exampleTest - 2018.01.08 at 20h 34m 27s.xml">
+      <configuration name="Example.exampleTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 42m 26s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
+    <history-entry file="Example_exampleTest - 2018.01.08 at 20h 34m 58s.xml">
+      <configuration name="Example.exampleTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="OOPTestMult2Almost_mult2LevelAlmostMatch - 2018.01.08 at 20h 21m 57s.xml">
       <configuration name="OOPTestMult2Almost.mult2LevelAlmostMatch" configurationId="JUnit" />
@@ -509,32 +523,11 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/I2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/I3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -560,13 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -675,16 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="431" column="9" lean-forward="true" selection-start-line="431" selection-start-column="9" selection-end-line="431" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -699,20 +675,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I11.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,9 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -730,9 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="66" lean-forward="false" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,9 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -750,7 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -766,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -774,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="62" lean-forward="false" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,9 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -800,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="9" column="44" lean-forward="false" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,10 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,9 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -901,9 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -911,9 +840,59 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/I3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/I1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/I2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding>
-            <element signature="e#257#258#0" expanded="true" />
-            <element signature="e#293#294#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

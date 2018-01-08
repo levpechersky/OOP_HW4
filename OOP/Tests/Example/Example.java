@@ -2,6 +2,7 @@ package OOP.Tests.Example;
 
 import OOP.Provided.OOPMultipleClassGenerator;
 import OOP.Provided.OOPMultipleException;
+
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
