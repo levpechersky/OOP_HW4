@@ -35,7 +35,12 @@ public class OOPMultipleControl {
         //We have the method from its interface, we need to get the actual method
         //from the class InterfaceImpl
         String method_inter = best_match_proto.getDeclaringClass().getName();
-        String actual_class_str = method_inter + "Impl";
+        String str_start = method_inter.substring(0, method_inter.lastIndexOf('.')+1);
+        System.out.println(str_start);
+        String str_end = method_inter.substring(method_inter.lastIndexOf('.')+2);
+        System.out.println(str_end);
+        String  actual_class_str = str_start + "C" + str_end;
+        System.out.println(actual_class_str);
         Class actual; Method best_match;
         try {
             actual = Class.forName(actual_class_str);
@@ -50,12 +55,14 @@ public class OOPMultipleControl {
         }
         Object output;
         try {
-            output = best_match.invoke(args);
+            output = best_match.invoke(actual.newInstance(), args);
             return output;
         } catch (IllegalAccessException e) {
             throw new OOPBadClass(best_match);
         } catch (InvocationTargetException e) {
             throw new OOPBadClass(best_match);
+        } catch (InstantiationException e) {
+            return null;
         }
     }
 
@@ -315,6 +322,10 @@ public class OOPMultipleControl {
                 = possibleMethodMatches(this.interfaceClass, invokedName, invokedArgs);
         Integer minimalDist = getMinimalParamDist(possibleMatches, invokedArgs);
         Map<Method, Integer> matchsWithDist = getMethodDistMap(invokedArgs, possibleMatches);
+        for(Map.Entry<Method, Integer> me1 : matchsWithDist.entrySet()) {
+            System.out.println("### " + me1.getKey().getName() + ", " + me1.getValue() + " ###");
+        }
+        System.out.println("minimalDist = " + minimalDist);
         Map<Method, Integer> minimalDistMethods = matchsWithDist.entrySet().stream()
                 .filter(aPair -> (aPair.getValue() <= minimalDist))
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
@@ -327,7 +338,10 @@ public class OOPMultipleControl {
             for(Map.Entry<Method, Integer> m2 : minimalDistMethods.entrySet()) {
                 if(m1.getKey().equals(m2.getKey())) //Method always equal to itself.
                     continue;
-                if(m1.getKey().getParameterTypes().equals(m2.getKey().getParameterTypes())) {
+                if(getMethodModifier(m1.getKey()) == OOPMethodModifier.PRIVATE ||
+                        getMethodModifier(m2.getKey()) == OOPMethodModifier.PRIVATE)
+                    continue;
+                if(Arrays.equals(m1.getKey().getParameterTypes(),(m2.getKey().getParameterTypes()))) {
                     List<Pair<Class<?>, Method>> ambiguities = minimalDistMethods.entrySet().stream()
                             .collect(Collectors.toMap(aPair -> aPair.getKey().getDeclaringClass(), aPair -> aPair.getKey()))
                             .entrySet().stream()
@@ -354,7 +368,8 @@ public class OOPMultipleControl {
     private Integer getMinimalParamDist(Set<Method> possibleMatches, Object[] argArray) {
         //The maximal distance is no arguments matching exactly, so this
         //should be a valid upper bound for how many match exactly.
-        Integer minimalDist = argArray.length + 1;
+        //The minimal distance will be set in accordance with a non-private method.
+        Integer minimalDist = (argArray == null) ? 1 : argArray.length + 1;
         Class<?>[] match_types;
         Integer currentDist;
         for(Method match : possibleMatches) {
@@ -362,7 +377,7 @@ public class OOPMultipleControl {
             currentDist = getParametersDistance(argArray, match_types);
             if(currentDist == null)
                 continue; //Should never get here.
-            if(currentDist < minimalDist)
+            if(currentDist <= minimalDist && getMethodModifier(match) != OOPMethodModifier.PRIVATE)
                 minimalDist = currentDist;
         }
         return minimalDist;
@@ -388,26 +403,29 @@ public class OOPMultipleControl {
         Queue<Class<?>> qu_BFS = new ArrayDeque<>();
         Map<Method, Integer> levelMap = new HashMap<>();
         assert (interfaceClass.getGenericInterfaces().length > 0);
-        qu_BFS.add(interfaceClass.getInterfaces()[0]);
+        qu_BFS.add(interfaceClass);
         Integer bfs_level = 0;
+        Integer num_params = (methodArgs == null) ? 0 : methodArgs.length;
         while(!qu_BFS.isEmpty()) {
             bfs_level += 1;
             Class<?> currVertex = qu_BFS.poll();
             Class<?>[] singleLevelInterfaces = currVertex.getInterfaces();
+            if(singleLevelInterfaces == null)
+                continue;
             for(Class<?> currInterface : singleLevelInterfaces) {
-                Method found = matchingMethodExists(currInterface, methodName, methodArgs.length);
-                if(found == null)
-                    continue;
-                if((found.getModifiers() == Modifier.PRIVATE)
-                        || (getMethodModifier(found) == OOPMethodModifier.PRIVATE)) {
-                    addMethodIfNeeded(levelMap, found, bfs_level);
-                    continue; //If private, means it hides methods above it,
-                    //even if their parameters are different.
-                }
-                if(verifyArgumentTypes(methodArgs, found.getParameterTypes())) {
-                    addMethodIfNeeded(levelMap, found, bfs_level);
-                    continue; //If exists, means hiding parental methods.
-                    //Even if parameters different, still want to hide.
+                Method found = matchingMethodExists(currInterface, methodName, num_params);
+                if(found != null) {
+                    if ((found.getModifiers() == Modifier.PRIVATE)
+                            || (getMethodModifier(found) == OOPMethodModifier.PRIVATE)) {
+                        addMethodIfNeeded(levelMap, found, bfs_level);
+                        continue; //If private, means it hides methods above it,
+                        //even if their parameters are different.
+                    }
+                    if (verifyArgumentTypes(methodArgs, found.getParameterTypes())) {
+                        addMethodIfNeeded(levelMap, found, bfs_level);
+                        continue; //If exists, means hiding parental methods.
+                        //Even if parameters different, still want to hide.
+                    }
                 }
                 qu_BFS.add(currInterface); //Adding again to the BFS.
             }
@@ -423,13 +441,17 @@ public class OOPMultipleControl {
      * @param numArgs        - The number of arguments the method should have.
      */
     private static Method matchingMethodExists(Class<?> interfaceClass, String methodName, Integer numArgs) {
+        assert(interfaceClass != null);
         Method[] interfaceMethods = interfaceClass.getDeclaredMethods();
         for(Method m : interfaceMethods) {
             if(!m.isAnnotationPresent(OOPMultipleMethod.class))
                 continue;
             if(m.getName().equals(methodName)
-                    && (m.getParameterTypes().length == numArgs))
+                    && (m.getParameterTypes().length == numArgs)) {
+                System.out.println("^^^ Method returning: " + m.getName());
+                System.out.println("^^^ Num of arguments: " + m.getParameterTypes().length);
                 return m;
+            }
         }
         return null;
     }
@@ -441,6 +463,14 @@ public class OOPMultipleControl {
      *                        Types that inherit the given one are valid.
      */
     private static boolean verifyArgumentTypes(Object[] inputVars, Class<?>[] expectedTypes) {
+        if(inputVars == null && expectedTypes == null)
+            return true;
+        if(inputVars == null && expectedTypes != null && expectedTypes.length == 0)
+            return true;
+        if((inputVars != null && expectedTypes == null)
+            || (inputVars == null && expectedTypes != null))
+            return false;
+        //At this point, both are not null.
         if(inputVars.length != expectedTypes.length)
             return false;
         for(int i = 0; i < inputVars.length; i++) {
@@ -471,6 +501,7 @@ public class OOPMultipleControl {
             Class<?> exist_declareClass = entry.getKey().getDeclaringClass();
             Class<?> newer_declareClass = possibleAdd.getDeclaringClass();
             if(newer_declareClass.isAssignableFrom(exist_declareClass)) {
+                System.out.println("&&& Don't need to add " + possibleAdd.getName());
                 matchingFound.remove(entry.getKey());
                 matchingFound.put(possibleAdd, level);
                 need_add = false;
@@ -478,6 +509,7 @@ public class OOPMultipleControl {
             }
         }
         if(need_add) {
+            System.out.println("*** Need to add " + possibleAdd.getName());
             matchingFound.put(possibleAdd, level);
         }
     }
@@ -504,14 +536,19 @@ public class OOPMultipleControl {
      *         the sizes of the arrays are not equals.
      */
     private static Integer getParametersDistance(Object[] argArray, Class<?>[] possibleTypes) {
-        if(!verifyArgumentTypes(argArray, possibleTypes))
+        if(!verifyArgumentTypes(argArray, possibleTypes)) {
+            System.out.println("getParamsDistance: verify failed.");
             return null;
+        }
+        Integer num_params = (argArray == null) ? 0 : argArray.length;
         Integer mismatchCount = 0;
-        for(int i = 0; i < argArray.length; i++) {
+
+        for(int i = 0; i < num_params; i++) {
             if(argArray[i].getClass().equals(possibleTypes[i]))
                 continue;
             mismatchCount += 1;
         }
+        System.out.println("getParamsDistance: mismatchCount = " + mismatchCount);
         return mismatchCount;
     }
 }
