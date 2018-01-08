@@ -74,11 +74,7 @@ public class OOPMultipleControl {
 
     private void checkGraphAnnotations() throws OOPBadClass {
         try {
-            // Root of inheritance graph doesn't need to be annotated, so we don't check it.
-            doBFS(this.interfaceClass, (aClass, unused) -> {
-                if (aClass != this.interfaceClass)
-                    checkAnnotationsOfInterface(aClass);
-            }, null);
+            doBFS(this.interfaceClass, (aClass, unused) -> checkAnnotationsOfInterface(aClass), null);
         } catch (OOPBadClass e) {
             throw e;
         } catch (OOPMultipleException e) {
@@ -88,11 +84,13 @@ public class OOPMultipleControl {
         }
     }
 
-    private static void checkAnnotationsOfInterface(Class<?> interfaceToCheck) throws OOPBadClass {
+    private void checkAnnotationsOfInterface(Class<?> interfaceToCheck) throws OOPBadClass {
         assert interfaceToCheck.isInterface(); // Sanity check. We don't expect non-interface classes
 
         // 1. interfaceToCheck has OOPMultipleInterface annotation
-        if (!interfaceToCheck.isAnnotationPresent(OOPMultipleInterface.class))
+        // Root of inheritance graph doesn't need to be annotated, so we don't check it.
+        if (interfaceToCheck != this.interfaceClass &&
+            !interfaceToCheck.isAnnotationPresent(OOPMultipleInterface.class))
             throw new OOPBadClass(interfaceToCheck);
 
         // 2. each method of interfaceToCheck has OOPMultipleMethod annotation
