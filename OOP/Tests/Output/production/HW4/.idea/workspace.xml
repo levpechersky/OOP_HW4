@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16ccd53d-5a85-4675-9242-6fd188eeb846" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/AImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/BImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/C.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/IA.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/IB.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/OOPTestInvokeRegular.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/OOP/Tests/PartC/OOPTestInvokeRegular.java" afterPath="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Solution/OOPMultipleControl$InheritedMethod.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Solution/OOPMultipleControl$InheritedMethod.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Solution/OOPMultipleControl.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Solution/OOPMultipleControl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Solution/OOPMultiple.class" afterPath="$PROJECT_DIR$/OOP/Solution/OOPMultiple.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java" afterPath="$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/.idea/workspace.xml" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,47 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="OOPMultipleControl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
+      <file leaf-file-name="OOPTestMult2Level.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/OOPTestMult2Level.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="37" column="66" lean-forward="false" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Example.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OOPTestInvokeRegular.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="C1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            <state relative-caret-position="425">
+              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,23 +28,63 @@
         </entry>
       </file>
       <file leaf-file-name="I3.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/I3.java">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I3.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="50">
-              <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="C2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C2.java">
+      <file leaf-file-name="C11.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C11.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+              <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="I22.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I22.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="C12.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C12.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="C21.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C21.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="C22.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C22.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="62" lean-forward="false" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,8 +94,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -143,6 +138,32 @@
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C2.java" />
         <option value="$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java" />
         <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I5.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I1.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I3.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I2.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I4.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C1.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C2.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C3.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C4.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/OOPTestInvokeRegularAdvanced.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I1.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/C1.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I2.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/C2.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I3.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C11.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C12.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I11.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I12.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C22.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I21.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C21.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I22.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I3.java" />
+        <option value="$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/OOPTestMult2Level.java" />
       </list>
     </option>
   </component>
@@ -170,10 +191,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -190,12 +211,6 @@
               <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
               <item name="HW4" type="462c0819:PsiDirectoryNode" />
               <item name="OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="Provided" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="HW4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HW4" type="462c0819:PsiDirectoryNode" />
-              <item name="OOP" type="462c0819:PsiDirectoryNode" />
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -211,7 +226,7 @@
               <item name="OOP" type="462c0819:PsiDirectoryNode" />
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
               <item name="PartC" type="462c0819:PsiDirectoryNode" />
-              <item name="TestInvokeRegular" type="462c0819:PsiDirectoryNode" />
+              <item name="TestMult2Level" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -238,20 +253,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OOPTestInvokeRegular.regularTest">
-    <configuration name="Example.exampleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.OOPTestMult2Level.inherit2LevelTest">
+    <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="OOP.Tests.Example.*" />
+          <option name="PATTERN" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="HW4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="OOP.Tests.Example" />
-      <option name="MAIN_CLASS_NAME" value="OOP.Tests.Example.Example" />
-      <option name="METHOD_NAME" value="exampleTest" />
+      <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced" />
+      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.OOPTestInvokeRegularAdvanced" />
+      <option name="METHOD_NAME" value="advancedRegularTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -264,19 +279,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="OOPTestInvokeRegular.RegularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OOPTestInvokeRegular.advancedRegularTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="OOP.Tests.PartC.TestInvokeRegular.*" />
+          <option name="PATTERN" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="HW4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestInvokeRegular" />
-      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeRegular.OOPTestInvokeRegular" />
-      <option name="METHOD_NAME" value="RegularTest" />
+      <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced" />
+      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeRegularAdvanced.OOPTestInvokeRegular" />
+      <option name="METHOD_NAME" value="advancedRegularTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -314,19 +329,44 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PartBTest.diamondWithDefaultMethodsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OOPTestMult2Level.inherit2LevelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="OOP.Tests.PartB.InherentAmbiguity.*" />
+          <option name="PATTERN" value="OOP.Tests.PartC.TestMult2Level.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="HW4" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="OOP.Tests.PartB.InherentAmbiguity" />
-      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartB.InherentAmbiguity.PartBTest" />
-      <option name="METHOD_NAME" value="diamondWithDefaultMethodsTest" />
+      <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestMult2Level" />
+      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestMult2Level.OOPTestMult2Level" />
+      <option name="METHOD_NAME" value="inherit2LevelTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TestInvokeMultipleSucc.invokeMultiplePass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="OOP.Tests.PartC.TestInvokeMultipleSucc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="HW4" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="OOP.Tests.PartC.TestInvokeMultipleSucc" />
+      <option name="MAIN_CLASS_NAME" value="OOP.Tests.PartC.TestInvokeMultipleSucc.TestInvokeMultipleSucc" />
+      <option name="METHOD_NAME" value="invokeMultiplePass" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -420,18 +460,20 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.RegularTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.PartBTest.diamondWithDefaultMethodsTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Example.exampleTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.regularTest" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.regularTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.advancedRegularTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegularAdvanced.advancedRegularTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestInvokeMultipleSucc.invokeMultiplePass" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Level.inherit2LevelTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.regularTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.RegularTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Example.exampleTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PartBTest.diamondWithDefaultMethodsTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.OOPTestMult2Level.inherit2LevelTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestInvokeMultipleSucc.invokeMultiplePass" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegularAdvanced.advancedRegularTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.advancedRegularTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.OOPTestInvokeRegular.regularTest" />
       </list>
     </recent_temporary>
   </component>
@@ -449,35 +491,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 09h 39m 53s.xml">
+    <history-entry file="OOPTestInvokeRegularAdvanced_advancedRegularTest - 2018.01.08 at 18h 54m 27s.xml">
+      <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OOPTestInvokeRegularAdvanced_advancedRegularTest - 2018.01.08 at 18h 55m 46s.xml">
+      <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OOPTestInvokeRegularAdvanced_advancedRegularTest - 2018.01.08 at 18h 57m 49s.xml">
+      <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OOPTestInvokeRegularAdvanced_advancedRegularTest - 2018.01.08 at 18h 58m 16s.xml">
+      <configuration name="OOPTestInvokeRegularAdvanced.advancedRegularTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 39m 01s.xml">
       <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 09h 42m 17s.xml">
+    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 39m 23s.xml">
       <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 09h 44m 21s.xml">
+    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 41m 15s.xml">
       <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 09h 45m 25s.xml">
+    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 42m 08s.xml">
       <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 10h 03m 25s.xml">
+    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 13h 42m 26s.xml">
       <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 10h 04m 45s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 10h 09m 19s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 10h 10m 24s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 10h 12m 57s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="OOPTestInvokeRegular_regularTest - 2018.01.08 at 10h 16m 00s.xml">
-      <configuration name="OOPTestInvokeRegular.regularTest" configurationId="JUnit" />
+    <history-entry file="TestInvokeMultipleSucc_invokeMultiplePass - 2018.01.08 at 19h 11m 19s.xml">
+      <configuration name="TestInvokeMultipleSucc.invokeMultiplePass" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -501,7 +543,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30251142" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40182647" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -525,124 +567,17 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java</url>
-          <line>19</line>
+          <url>file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java</url>
+          <line>320</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8300">
-          <caret line="332" column="44" lean-forward="false" selection-start-line="332" selection-start-column="44" selection-end-line="332" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartB/InherentAmbiguity/PartBTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="47" column="23" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Provided/OOPCoincidentalAmbiguity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -730,44 +665,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultiple.java" />
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/I1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/I2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,34 +677,281 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="240" column="0" lean-forward="false" selection-start-line="240" selection-start-column="0" selection-end-line="240" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="7" column="63" lean-forward="false" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/Example.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="37" column="66" lean-forward="false" selection-start-line="37" selection-start-column="66" selection-end-line="37" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="307">
+          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/C1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/I1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="33" lean-forward="false" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/I1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/C4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegular/OOPTestInvokeRegular.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="27" />
+        <state relative-caret-position="14">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/C1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="61" lean-forward="false" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="61" lean-forward="false" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="431" column="9" lean-forward="true" selection-start-line="431" selection-start-column="9" selection-end-line="431" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/I3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/C2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/OOPTestInvokeRegularAdvanced.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I21.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="66" lean-forward="false" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="34" lean-forward="false" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C21.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="66" lean-forward="false" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/C22.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="62" lean-forward="false" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/I22.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/PartC/TestMult2Level/OOPTestMult2Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
