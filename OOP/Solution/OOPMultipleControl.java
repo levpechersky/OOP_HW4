@@ -47,6 +47,7 @@ public class OOPMultipleControl {
             return null;
         }
         Object output;
+
         try {
             output = best_match.invoke(actual.newInstance(), args);
             return output;
@@ -324,9 +325,9 @@ public class OOPMultipleControl {
         Integer minimalDist = getMinimalParamDist(possibleMatches, invokedArgs);
         Map<Method, Integer> matchsWithDist = getMethodDistMap(invokedArgs, possibleMatches);
         for(Map.Entry<Method, Integer> me1 : matchsWithDist.entrySet()) {
-            System.out.println("### " + me1.getKey().getName() + ", " + me1.getValue() + " ###");
+            //System.out.println("### " + me1.getKey().getName() + ", " + me1.getValue() + " ###");
         }
-        System.out.println("minimalDist = " + minimalDist);
+        //System.out.println("minimalDist = " + minimalDist);
         Map<Method, Integer> minimalDistMethods = matchsWithDist.entrySet().stream()
                 .filter(aPair -> (aPair.getValue() <= minimalDist))
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
@@ -342,7 +343,7 @@ public class OOPMultipleControl {
                 if(getMethodModifier(m1.getKey()) == OOPMethodModifier.PRIVATE ||
                         getMethodModifier(m2.getKey()) == OOPMethodModifier.PRIVATE)
                     continue;
-                if(Arrays.equals(m1.getKey().getParameterTypes(),(m2.getKey().getParameterTypes()))) {
+                if(checkSameParameterTypes(m1.getKey().getParameterTypes(),(m2.getKey().getParameterTypes()))) {
                     List<Pair<Class<?>, Method>> ambiguities = minimalDistMethods.entrySet().stream()
                             .collect(Collectors.toMap(aPair -> aPair.getKey().getDeclaringClass(), aPair -> aPair.getKey()))
                             .entrySet().stream()
@@ -374,10 +375,7 @@ public class OOPMultipleControl {
     }
 
     private Integer getMinimalParamDist(Set<Method> possibleMatches, Object[] argArray) {
-        //The maximal distance is no arguments matching exactly, so this
-        //should be a valid upper bound for how many match exactly.
-        //The minimal distance will be set in accordance with a non-private method.
-        Integer minimalDist = (argArray == null) ? 1 : argArray.length + 1;
+        Integer minimalDist = Integer.MAX_VALUE;
         Class<?>[] match_types;
         Integer currentDist;
         for(Method match : possibleMatches) {
@@ -456,8 +454,8 @@ public class OOPMultipleControl {
                 continue;
             if(m.getName().equals(methodName)
                     && (m.getParameterTypes().length == numArgs)) {
-                System.out.println("^^^ Method returning: " + m.getName());
-                System.out.println("^^^ Num of arguments: " + m.getParameterTypes().length);
+                //System.out.println("^^^ Method returning: " + m.getName());
+                //System.out.println("^^^ Num of arguments: " + m.getParameterTypes().length);
                 return m;
             }
         }
@@ -509,7 +507,7 @@ public class OOPMultipleControl {
             Class<?> exist_declareClass = entry.getKey().getDeclaringClass();
             Class<?> newer_declareClass = possibleAdd.getDeclaringClass();
             if(newer_declareClass.isAssignableFrom(exist_declareClass)) {
-                System.out.println("&&& Don't need to add " + possibleAdd.getName());
+                //System.out.println("&&& Don't need to add " + possibleAdd.getName());
                 matchingFound.remove(entry.getKey());
                 matchingFound.put(possibleAdd, level);
                 need_add = false;
@@ -517,7 +515,7 @@ public class OOPMultipleControl {
             }
         }
         if(need_add) {
-            System.out.println("*** Need to add " + possibleAdd.getName());
+            //System.out.println("*** Need to add " + possibleAdd.getName());
             matchingFound.put(possibleAdd, level);
         }
     }
@@ -545,7 +543,7 @@ public class OOPMultipleControl {
      */
     private static Integer getParametersDistance(Object[] argArray, Class<?>[] possibleTypes) {
         if(!verifyArgumentTypes(argArray, possibleTypes)) {
-            System.out.println("getParamsDistance: verify failed.");
+            //System.out.println("getParamsDistance: verify failed.");
             return null;
         }
         Integer num_params = (argArray == null) ? 0 : argArray.length;
@@ -554,9 +552,27 @@ public class OOPMultipleControl {
         for(int i = 0; i < num_params; i++) {
             if(argArray[i].getClass().equals(possibleTypes[i]))
                 continue;
-            mismatchCount += 1;
+            mismatchCount += getClassesDist(argArray[i].getClass(), possibleTypes[i]);
         }
-        System.out.println("getParamsDistance: mismatchCount = " + mismatchCount);
+        //System.out.println("getParamsDistance: mismatchCount = " + mismatchCount);
         return mismatchCount;
+    }
+
+    private static boolean checkSameParameterTypes(Class<?>[] arr1, Class<?>[] arr2) {
+        Set<Class<?>> set1 = Arrays.stream(arr1).collect(Collectors.toSet());
+        Set<Class<?>> set2 = Arrays.stream(arr2).collect(Collectors.toSet());
+        return set1.equals(set2);
+    }
+
+    private static int getClassesDist(Class<?> c1, Class<?> c2) {
+        if(c1.isAssignableFrom(c2) && c2.isAssignableFrom(c1))
+            return 0;
+        if(c2.isAssignableFrom(c1))
+            return 1 + getClassesDist(c1.getSuperclass(), c2);
+        if(c1.isAssignableFrom(c2))
+            return 1 + getClassesDist(c1, c2.getSuperclass());
+        else
+            return -1;
+
     }
 }

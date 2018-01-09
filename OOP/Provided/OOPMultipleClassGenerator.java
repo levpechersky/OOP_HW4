@@ -16,23 +16,12 @@ import java.util.*;
 
 public class OOPMultipleClassGenerator {
 
-    private static final String FS = System.getProperty("file.separator");
-
     private static final String className = "OOPMultiple";
     private static final String packageName = "OOP.Solution";
     private static final String DispatchClassName = "OOPMultipleControl";
-    private static final String sourcePath = System.getProperty("user.dir") + FS + "OOP" + FS + "Solution" + FS;
-    private static final String classPath = System.getProperty("user.dir");
+    private static final String sourcePath = System.getProperty("user.dir") + "/OOP/Solution" + "/";
+    private static final String classPath = System.getProperty("user.dir") ;
     private OOPMultipleControl controller;
-
-    private static String getOutputClassPath() {
-        Class<OOPMultipleClassGenerator> thisClass = OOPMultipleClassGenerator.class;
-        String outputClassPath = thisClass.getResource(thisClass.getSimpleName() + ".class").toString();
-        String str = thisClass.getName().replaceAll("\\.", FS);
-        int index = outputClassPath.indexOf(str);
-        outputClassPath = outputClassPath.substring(0, index);
-        return outputClassPath;
-    }
 
     /***
      * Generates OOPMultiple for a Multiple Inheritance Tree.
@@ -62,7 +51,7 @@ public class OOPMultipleClassGenerator {
              * The creation of the source file
              */
             FileWriter writer = new FileWriter(sourceFile);
-            writer.write(getClassString(interfaceClass));
+            writer.write(OOPMultipleClassGenerator.getClassString(interfaceClass));
             writer.close();
 
             /**
@@ -70,10 +59,10 @@ public class OOPMultipleClassGenerator {
              */
             JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
             StandardJavaFileManager fileManager = compiler.getStandardFileManager(null, null, null);
-            fileManager.setLocation(StandardLocation.CLASS_OUTPUT, Collections.singletonList(new File(classPath)));
+            fileManager.setLocation(StandardLocation.CLASS_OUTPUT, Arrays.asList(new File(classPath)));
             StringWriter out = new StringWriter();
             JavaCompiler.CompilationTask task = compiler.getTask(out, fileManager, null, null, null,
-                    fileManager.getJavaFileObjectsFromFiles(Collections.singletonList(sourceFile)));
+                    fileManager.getJavaFileObjectsFromFiles(Arrays.asList(sourceFile)));
 
             task.call();
 
@@ -87,10 +76,6 @@ public class OOPMultipleClassGenerator {
              */
             ClassLoader loader = new URLClassLoader(urls);
             Class<?> targetClass = loader.loadClass(packageName + "." + className);
-            String pathname = targetClass.getResource(targetClass.getSimpleName() + ".class").toString();
-            File classFile = new File(pathname);
-            Thread.sleep(50);
-            classFile.delete();
 
             /**
              * Using reflection to create an object of OOPMultiple
@@ -100,7 +85,6 @@ public class OOPMultipleClassGenerator {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            removeSourceFile();
             System.exit(1);
         } finally {
             removeSourceFile();
@@ -119,13 +103,13 @@ public class OOPMultipleClassGenerator {
     /***
      * Builds the class's source file, as a string.
      *
-     * @param interfaceClass The class object of the lowest interface in the tree.
+     * @param interfaceClass The class file of the lowest interface in the tree.
      *                       This interface is implemented by OOPMultiple.
      * @return source file's string.
      */
     private static String getClassString(Class<?> interfaceClass) {
         return packageStatementString() + importStatementString() + classHeaderString(interfaceClass) + "\n" +
-                dispatcherFieldString() + "\n\n" + constructorFieldString() +
+                dispatcherFieldString() + "\n" + constructorFieldString() +"\n" +
                 interfaceMethodsString(interfaceClass) + "\n }";
     }
 
@@ -166,7 +150,7 @@ public class OOPMultipleClassGenerator {
      * @return dispatcher field string
      */
     private static String dispatcherFieldString() {
-        return "private " + DispatchClassName + " dispatcher;\n";
+        return "private " + DispatchClassName + " dispatcher;\n\n";
     }
 
     /***
@@ -176,7 +160,16 @@ public class OOPMultipleClassGenerator {
      */
     private static String constructorFieldString() {
         return "public " + className + "(" + DispatchClassName + " dispatcher){\n"
-                + "this.dispatcher = dispatcher;\n" + "}\n";
+                + "this.dispatcher = dispatcher;\n"+ "}\n"+testFieldString();
+    }
+    /***
+     * Test String field
+     *
+     * @return invoke field string
+     */
+    private static String testFieldString() {
+    return "\npublic Object invokeTest(String s,Object[] objs) throws OOPMultipleException{\n"
+    + "return this.dispatcher.invoke(s,objs);\n" + "}\n";
     }
 
     /***
@@ -188,11 +181,12 @@ public class OOPMultipleClassGenerator {
      */
     private static String interfaceMethodsString(Class<?> interfaceClass) {
 
-        StringBuilder interfaceMethods = new StringBuilder();
+        String interfaceMethods = "";
+        Set<String> writtenMethods = new HashSet<>();
         Set<Method> writtenMethodsSet = new HashSet<>();
         for (Method method : interfaceClass.getMethods()) {
 
-            interfaceMethods.append("\n \n");
+            interfaceMethods += "\n \n";
             boolean shouldContinue = false;
             for (Method m : writtenMethodsSet) {
                 if (method.getName().equals(m.getName()) &&
@@ -208,9 +202,10 @@ public class OOPMultipleClassGenerator {
             }
 
             writtenMethodsSet.add(method);
+            writtenMethods.add(method.getName());
 
-            interfaceMethods.append("public ").append(method.getReturnType().getName());
-            interfaceMethods.append(" ").append(method.getName()).append(" ").append("(");
+            interfaceMethods += "public " + method.getReturnType().getName();
+            interfaceMethods += " " + method.getName() + " " + "(";
 
             boolean parametersAdded = false;
             int counter = 1;
@@ -219,44 +214,36 @@ public class OOPMultipleClassGenerator {
                 parametersAdded = true;
                 String paramName = "param" + counter++;
                 params.add(paramName);
-                interfaceMethods.append(param.getName()).append(" ").append(paramName).append(" ,");
+                interfaceMethods += param.getName() + " " + paramName + " ,";
             }
 
-            interfaceMethods = new StringBuilder(parametersAdded ? interfaceMethods.substring(0, interfaceMethods.length() - 2)
-                    : interfaceMethods.toString());
-            interfaceMethods.append(") ").append(throwsExceptionString()).append(" {");
-            StringBuilder paramsArray = new StringBuilder();
+            interfaceMethods = parametersAdded ? interfaceMethods.substring(0, interfaceMethods.length() - 2)
+                    : interfaceMethods;
+            interfaceMethods += ") " + throwsExceptionString() + " {";
+            String paramsArray = "";
 
             if (params.size() > 0) {
-                paramsArray = new StringBuilder("new Object[]{");
+                paramsArray = "new Object[]{";
                 for (String param : params) {
-                    paramsArray.append(param).append(",");
+                    paramsArray += param + ",";
                 }
-                paramsArray = new StringBuilder(paramsArray.substring(0, paramsArray.length() - 1));
-                paramsArray.append("}");
+                paramsArray = paramsArray.substring(0, paramsArray.length() - 1);
+                paramsArray += "}";
             }
 
             if (params.size() == 0) {
-                paramsArray = new StringBuilder("null");
+                paramsArray = "null";
             }
-            interfaceMethods.append("\n");
-            StringBuilder dispatchCall = new StringBuilder().append("dispatcher.invoke(\"")
-                    .append(method.getName())
-                    .append("\", ")
-                    .append(paramsArray)
-                    .append(");\n");
             if (method.getReturnType().equals(Void.TYPE)) {
-                interfaceMethods.append(dispatchCall);
+                interfaceMethods += "dispatcher.invoke(\"" + method.getName() + "\", " + paramsArray + ");\n}";
+
             } else {
-                interfaceMethods.append("return " + "(")
-                        .append(method.getReturnType().getName())
-                        .append(") ")
-                        .append(dispatchCall);
+                interfaceMethods += "return " + "(" + method.getReturnType().getName() + ")" +
+                        "dispatcher.invoke(\"" + method.getName() + "\", " + paramsArray + ");\n}";
             }
-            interfaceMethods.append("}");
         }
 
-        return interfaceMethods.toString();
+        return interfaceMethods;
     }
 
     /***

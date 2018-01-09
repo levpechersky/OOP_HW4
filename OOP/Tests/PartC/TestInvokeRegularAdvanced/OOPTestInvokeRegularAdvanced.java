@@ -1,11 +1,8 @@
 package OOP.Tests.PartC.TestInvokeRegularAdvanced;
 
 import OOP.Provided.OOPMultipleClassGenerator;
-import OOP.Tests.PartC.TestInvokeRegularAdvanced.I5;
 import static org.junit.Assert.*;
 import org.junit.Test;
-
-import OOP.Provided.OOPMultipleClassGenerator;
 import OOP.Provided.OOPMultipleException;
 
 public class OOPTestInvokeRegularAdvanced {

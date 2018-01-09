@@ -24,4 +24,10 @@ public class OOPTestPrivateHidesAmbig {
             generator.removeSourceFile();
         }
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        generator.removeSourceFile();
+    }
 }

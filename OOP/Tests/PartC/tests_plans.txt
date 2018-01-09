@@ -20,6 +20,7 @@ Test 7: OOPTestInvokeHigherAmbig
 Same as 6, but:
 B1 : foo1(String) (no ambiguity)
 
+NO NEED
 Test 8: OOPTestDiamondAmbig
 class A {foo}
 class B1:A, class B2:A
