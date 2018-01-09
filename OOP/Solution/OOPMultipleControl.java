@@ -34,22 +34,15 @@ public class OOPMultipleControl {
         Method best_match_proto = this.checkCoincidentalAmbiguity(methodName, args);
         //We have the method from its interface, we need to get the actual method
         //from the class InterfaceImpl
-        String method_inter = best_match_proto.getDeclaringClass().getName();
-        String str_start = method_inter.substring(0, method_inter.lastIndexOf('.')+1);
-        System.out.println(str_start);
-        String str_end = method_inter.substring(method_inter.lastIndexOf('.')+2);
-        System.out.println(str_end);
-        String  actual_class_str = str_start + "C" + str_end;
-        System.out.println(actual_class_str);
-        Class actual; Method best_match;
+
+        Method best_match;
+        Class<?> actual = this.getInterfaceActualClass(best_match_proto.getDeclaringClass().getName());
         try {
-            actual = Class.forName(actual_class_str);
-        } catch (ClassNotFoundException e) {
-            return null;
-        }
-        try {
-            best_match =
-                    actual.getDeclaredMethod(best_match_proto.getName(), best_match_proto.getParameterTypes());
+            Class<?>[] params = (best_match_proto.getParameterTypes().length == 0) ? null : best_match_proto.getParameterTypes();
+            //If proto is default, then we already have impl for it.
+            best_match = (best_match_proto.isDefault()) ?
+                    best_match_proto
+                    : actual.getDeclaredMethod(best_match_proto.getName(), params);
         } catch (NoSuchMethodException e) {
             return null;
         }
@@ -58,10 +51,24 @@ public class OOPMultipleControl {
             output = best_match.invoke(actual.newInstance(), args);
             return output;
         } catch (IllegalAccessException e) {
-            throw new OOPBadClass(best_match);
+            return null;
         } catch (InvocationTargetException e) {
             throw new OOPBadClass(best_match);
         } catch (InstantiationException e) {
+            return null;
+        }
+    }
+
+    private Class<?> getInterfaceActualClass(String interClass_name) {
+        String method_inter = interClass_name;
+        String str_start = method_inter.substring(0, method_inter.lastIndexOf('.')+1);
+        String str_end = method_inter.substring(method_inter.lastIndexOf('.')+2);
+        String  actual_class_str = str_start + "C" + str_end;
+        Class actual;
+        try {
+            actual = Class.forName(actual_class_str);
+            return actual;
+        } catch (ClassNotFoundException e) {
             return null;
         }
     }
@@ -133,7 +140,7 @@ public class OOPMultipleControl {
             Class<?> caller = innerCallAnnotation.caller();
             Class<?> callee = innerCallAnnotation.callee();
             try {
-                Method calledMethod = caller.getMethod(innerCallAnnotation.methodName(), innerCallAnnotation.argTypes());
+                Method calledMethod = callee.getMethod(innerCallAnnotation.methodName(), innerCallAnnotation.argTypes());
                 OOPMultipleMethod methodAnnotation = calledMethod.getAnnotation(OOPMultipleMethod.class);
 
                 if (methodAnnotation.modifier().equals(OOPMethodModifier.PRIVATE))
@@ -350,12 +357,19 @@ public class OOPMultipleControl {
         Method best_match = null;
         Integer minimal_bfsVal = Integer.MAX_VALUE; //Set an upper bound.
         for(Map.Entry<Method, Integer> m : minimalDistMethods.entrySet()) {
+            if(getMethodModifier(m.getKey()) == OOPMethodModifier.PRIVATE)
+                continue;
             if(m.getValue() < minimal_bfsVal) {
                 minimal_bfsVal = m.getValue();
                 best_match = m.getKey();
             }
         }
-        assert (best_match != null);
+        if(best_match == null && minimalDistMethods.size() > 0) { //If there are methods, but private
+            List<ForbiddenAccess> inaccessible = minimalDistMethods.entrySet().stream()
+                    .map(aPair -> new ForbiddenAccess(this.getInterfaceActualClass(this.interfaceClass.getName()), aPair.getKey().getDeclaringClass(), aPair.getKey()))
+                    .collect(Collectors.toList());
+            throw new OOPInaccessibleMethod(inaccessible);
+        }
         return best_match;
     }
 
