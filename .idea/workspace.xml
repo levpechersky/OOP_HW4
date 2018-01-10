@@ -4,23 +4,9 @@
     <list default="true" id="16ccd53d-5a85-4675-9242-6fd188eeb846" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Solution/OOPMultiple.class" afterPath="$PROJECT_DIR$/OOP/Solution/OOPMultiple.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Solution/OOPMultipleControl.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Solution/OOPMultipleControl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/TestInvokeRegularAdvanced/OOPTestInvokeRegularAdvanced.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/TestInvokeRegularAdvanced/OOPTestInvokeRegularAdvanced.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/TestPrivateHidesAmbig/OOPTestPrivateHidesAmbig.class" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/TestPrivateHidesAmbig/OOPTestPrivateHidesAmbig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Provided/OOPMultipleClassGenerator.java" afterPath="$PROJECT_DIR$/OOP/Provided/OOPMultipleClassGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java" afterPath="$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Example/C1.java" afterPath="$PROJECT_DIR$/OOP/Tests/Example/C1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Example/C2.java" afterPath="$PROJECT_DIR$/OOP/Tests/Example/C2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Example/Example.java" afterPath="$PROJECT_DIR$/OOP/Tests/Example/Example.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Example/I1.java" afterPath="$PROJECT_DIR$/OOP/Tests/Example/I1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Example/I2.java" afterPath="$PROJECT_DIR$/OOP/Tests/Example/I2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/.idea/workspace.xml" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/tests_plans.txt" afterPath="$PROJECT_DIR$/OOP/Tests/Output/production/HW4/OOP/Tests/PartC/tests_plans.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.java" afterPath="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeMultipleSucc/TestInvokeMultipleSucc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/OOPTestInvokeRegularAdvanced.java" afterPath="$PROJECT_DIR$/OOP/Tests/PartC/TestInvokeRegularAdvanced/OOPTestInvokeRegularAdvanced.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/PartC/TestPrivateHidesAmbig/OOPTestPrivateHidesAmbig.java" afterPath="$PROJECT_DIR$/OOP/Tests/PartC/TestPrivateHidesAmbig/OOPTestPrivateHidesAmbig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OOP/Tests/PartC/tests_plans.txt" afterPath="$PROJECT_DIR$/OOP/Tests/PartC/tests_plans.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,12 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file leaf-file-name="TestMultiple.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/TestMultiple.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="2039" column="28" lean-forward="false" selection-start-line="2039" selection-start-column="16" selection-end-line="2039" selection-end-column="44" />
+            <state relative-caret-position="394">
+              <caret line="1996" column="21" lean-forward="false" selection-start-line="1996" selection-start-column="16" selection-end-line="1996" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -44,8 +30,8 @@
       <file leaf-file-name="OOPMultipleControl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="376" column="89" lean-forward="false" selection-start-line="376" selection-start-column="89" selection-end-line="376" selection-end-column="89" />
+            <state relative-caret-position="3024">
+              <caret line="325" column="93" lean-forward="false" selection-start-line="325" selection-start-column="93" selection-end-line="325" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -70,7 +56,6 @@
       <find>packageName</find>
       <find>Forbidden</find>
       <find>getDeclaredMe</find>
-      <find>println</find>
       <find>testOOPMultipleInterfaceAnnotations</find>
       <find>@Test</find>
       <find>invokeTest</find>
@@ -78,6 +63,8 @@
       <find>instanceof</find>
       <find>testOOPCoincidentalAmbiguityFindSuitable</find>
       <find>testOOPCoincidentalAmbiguityZeroArugments</find>
+      <find>println</find>
+      <find>testOOPInherentAmbiguityFakeDiamond</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,7 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -206,9 +193,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -240,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestMultiple.testOOPCoincidentalAmbiguity">
+  <component name="RunManager" selected="JUnit.TestMultiple.testOOPBadClass">
     <configuration name="OOPTestAmbigSuccFail.testMultSuccThenFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -456,10 +443,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.TestMultiple.testOOPCoincidentalAmbiguity" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OOPTestAmbigSuccFail.testMultSuccThenFail" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestMultiple.testOOPBadClass" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestMultiple.testOOPCoincidentalAmbiguity" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.TestMultiple.testOOPInherentAmbiguity" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestMultiple.testOOPBadClass" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.OOPTestAmbigSuccFail.testMultSuccThenFail" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.OOPTestSuccFailAdvanced.testSuccFailAdvanced" />
       </list>
     </recent_temporary>
@@ -478,23 +465,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.09 at 23h 51m 08s.xml">
-      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
+    <history-entry file="TestMultiple_testOOPBadClass - 2018.01.10 at 10h 49m 38s.xml">
+      <configuration name="TestMultiple.testOOPBadClass" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.09 at 23h 54m 36s.xml">
-      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.09 at 23h 55m 06s.xml">
-      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 00h 00m 41s.xml">
-      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 00h 01m 06s.xml">
-      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 00h 01m 28s.xml">
-      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
+    <history-entry file="TestMultiple_testOOPBadClass - 2018.01.10 at 11h 17m 34s.xml">
+      <configuration name="TestMultiple.testOOPBadClass" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 00h 01m 45s.xml">
       <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
@@ -507,6 +482,18 @@
     </history-entry>
     <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 00h 03m 16s.xml">
       <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 10h 45m 57s.xml">
+      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 10h 49m 18s.xml">
+      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMultiple_testOOPCoincidentalAmbiguity - 2018.01.10 at 11h 15m 55s.xml">
+      <configuration name="TestMultiple.testOOPCoincidentalAmbiguity" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestMultiple_testOOPInherentAmbiguity - 2018.01.10 at 11h 14m 19s.xml">
+      <configuration name="TestMultiple.testOOPInherentAmbiguity" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -521,7 +508,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4497717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30479452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -569,9 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -579,9 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -589,9 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -599,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -625,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -657,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +634,6 @@
         <state relative-caret-position="25">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,7 +643,6 @@
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,7 +652,6 @@
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +661,6 @@
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -760,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,7 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,9 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,34 +795,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/OOPMultipleClassGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/OOPMultipleClassGenerator.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/util/Pair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="45" column="23" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultiple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultiple.java" />
     <entry file="file://$PROJECT_DIR$/OOP/Provided/OOPMultipleClassGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -890,7 +819,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,7 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,11 +847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#2111#2112#0" expanded="true" />
-            <element signature="e#6484#6648#0" expanded="true" />
-            <element signature="e#6647#6648#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -934,7 +854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,9 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#71#72#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -953,7 +869,7 @@
         <state relative-caret-position="200">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#115#116#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,7 +879,7 @@
         <state relative-caret-position="200">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#115#116#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -983,23 +899,23 @@
         <state relative-caret-position="200">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#115#116#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Solution/OOPMultipleControl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="376" column="89" lean-forward="false" selection-start-line="376" selection-start-column="89" selection-end-line="376" selection-end-column="89" />
+        <state relative-caret-position="3024">
+          <caret line="325" column="93" lean-forward="false" selection-start-line="325" selection-start-column="93" selection-end-line="325" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OOP/Tests/Example/TestMultiple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="2039" column="28" lean-forward="false" selection-start-line="2039" selection-start-column="16" selection-end-line="2039" selection-end-column="44" />
+        <state relative-caret-position="394">
+          <caret line="1996" column="21" lean-forward="false" selection-start-line="1996" selection-start-column="16" selection-end-line="1996" selection-end-column="31" />
           <folding />
         </state>
       </provider>

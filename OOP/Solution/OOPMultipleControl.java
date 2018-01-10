@@ -324,10 +324,6 @@ public class OOPMultipleControl {
                 = possibleMethodMatches(this.interfaceClass, invokedName, invokedArgs);
         Integer minimalDist = getMinimalParamDist(possibleMatches, invokedArgs);
         Map<Method, Integer> matchsWithDist = getMethodDistMap(invokedArgs, possibleMatches);
-        for(Map.Entry<Method, Integer> me1 : matchsWithDist.entrySet()) {
-            //System.out.println("### " + me1.getKey().getName() + ", " + me1.getValue() + " ###");
-        }
-        //System.out.println("minimalDist = " + minimalDist);
         Map<Method, Integer> minimalDistMethods = matchsWithDist.entrySet().stream()
                 .filter(aPair -> (aPair.getValue() <= minimalDist))
                 .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
@@ -454,8 +450,6 @@ public class OOPMultipleControl {
                 continue;
             if(m.getName().equals(methodName)
                     && (m.getParameterTypes().length == numArgs)) {
-                //System.out.println("^^^ Method returning: " + m.getName());
-                //System.out.println("^^^ Num of arguments: " + m.getParameterTypes().length);
                 return m;
             }
         }
@@ -507,7 +501,6 @@ public class OOPMultipleControl {
             Class<?> exist_declareClass = entry.getKey().getDeclaringClass();
             Class<?> newer_declareClass = possibleAdd.getDeclaringClass();
             if(newer_declareClass.isAssignableFrom(exist_declareClass)) {
-                //System.out.println("&&& Don't need to add " + possibleAdd.getName());
                 matchingFound.remove(entry.getKey());
                 matchingFound.put(possibleAdd, level);
                 need_add = false;
@@ -515,7 +508,6 @@ public class OOPMultipleControl {
             }
         }
         if(need_add) {
-            //System.out.println("*** Need to add " + possibleAdd.getName());
             matchingFound.put(possibleAdd, level);
         }
     }
@@ -543,7 +535,6 @@ public class OOPMultipleControl {
      */
     private static Integer getParametersDistance(Object[] argArray, Class<?>[] possibleTypes) {
         if(!verifyArgumentTypes(argArray, possibleTypes)) {
-            //System.out.println("getParamsDistance: verify failed.");
             return null;
         }
         Integer num_params = (argArray == null) ? 0 : argArray.length;
@@ -554,7 +545,6 @@ public class OOPMultipleControl {
                 continue;
             mismatchCount += getClassesDist(argArray[i].getClass(), possibleTypes[i]);
         }
-        //System.out.println("getParamsDistance: mismatchCount = " + mismatchCount);
         return mismatchCount;
     }
 
