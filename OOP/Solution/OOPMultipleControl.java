@@ -95,10 +95,13 @@ public class OOPMultipleControl {
     private void checkAnnotationsOfInterface(Class<?> interfaceToCheck) throws OOPBadClass {
         assert interfaceToCheck.isInterface(); // Sanity check. We don't expect non-interface classes
 
+        // No special requirements from 'root' class
+        if (interfaceToCheck == this.interfaceClass)
+            return;
+
         // 1. interfaceToCheck has OOPMultipleInterface annotation
         // Root of inheritance graph doesn't need to be annotated, so we don't check it.
-        if (interfaceToCheck != this.interfaceClass &&
-            !interfaceToCheck.isAnnotationPresent(OOPMultipleInterface.class))
+        if (!interfaceToCheck.isAnnotationPresent(OOPMultipleInterface.class))
             throw new OOPBadClass(interfaceToCheck);
 
         // 2. each method of interfaceToCheck has OOPMultipleMethod annotation
@@ -188,7 +191,7 @@ public class OOPMultipleControl {
 
     private boolean existsCommonBaseWithDeclaredMethods() {
         Set<Class<?>> commonBases = new HashSet<>();
-        countInterfaceImplementors(this.interfaceClass).forEach((baseInterface, usagesCount) -> {
+        countBaseUsages(this.interfaceClass).forEach((baseInterface, usagesCount) -> {
             if(usagesCount > 1)
                 commonBases.add(baseInterface);
         });
@@ -306,6 +309,26 @@ public class OOPMultipleControl {
                 for (Class<?> baseInterface : aClass.getInterfaces()) {
                     Integer count = implementorsCount.getOrDefault(baseInterface, 0);
                     implementorsCount.put(baseInterface, count + 1);
+                }
+            }, result);
+        } catch (OOPMultipleException e) {
+            e.printStackTrace();
+            assert false;
+        }
+        return result;
+    }
+    /**
+     * @return Map (Interface)->(number of interfaces which extend it)
+     */
+    private static Map<Class<?>, Integer> countBaseUsages(Class<?> start) {
+        Map<Class<?>, Integer> result = new HashMap<>();
+        result.put(start, 1);
+        try {
+            doBFS(start, (aClass, accumulator) -> {
+                HashMap<Class<?>, Integer> implementorsCount = (HashMap<Class<?>, Integer>) accumulator;
+                for (Class<?> baseInterface : aClass.getInterfaces()) {
+                    Integer count = implementorsCount.getOrDefault(baseInterface, 0);
+                    implementorsCount.put(baseInterface, count + implementorsCount.get(aClass));
                 }
             }, result);
         } catch (OOPMultipleException e) {
@@ -468,7 +491,7 @@ public class OOPMultipleControl {
         if(inputVars == null && expectedTypes != null && expectedTypes.length == 0)
             return true;
         if((inputVars != null && expectedTypes == null)
-            || (inputVars == null && expectedTypes != null))
+                || (inputVars == null && expectedTypes != null))
             return false;
         //At this point, both are not null.
         if(inputVars.length != expectedTypes.length)
